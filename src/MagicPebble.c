@@ -4,7 +4,18 @@ float timer_delay=1; /* Создаем переменную для с време
 Window *window; /* Создаем указатель на окно */
 TextLayer *text_layer;  /* создаем  указатель на текстовый слой */
 
+#define ENG 1
+#define RUS 2
+#define LANG ENG 
+
+#if (LANG == ENG)
+static const char* messages[] = {"It is certain", "It is decidedly so", "Without a doubt", "Yes — definitely", "You may rely on it", "As I see it, yes", "Most likely", "Outlook good", "Signs point to yes", "Yes", "Reply hazy, try again", "Ask again later", "Better not tell you now", "Cannot predict now", "Concentrate and ask again", "Don’t count on it", "My reply is no", "My sources say no", "Outlook not so good ", "Very doubtful",}; 
+#endif
+#if (LANG == RUS)
 static const char* messages[] = {"Бесспорно", "Это предрешено","Никаких сомнений","Определенно - да","Будь уверен в этом","Мне кажется - да","Вероятнее всего","Хорошие перспективы","Да","Знаки говорят - да","Пока не ясно, попробуй еще раз","Спроси позже","Лучше не рассказывать сейчас","Сейчас нельзя предсказать","Сконцентрируйся и спроси снова","Даже не думай","Мой ответ - нет","Знаки говорят - нет","Перспективы не очень хорошие","Весьма сомнительно","Нет",}; /* Создаем массив ответов */
+#endif
+
+
 
 void timer_call() /* эта функция вызывается при срабатываниии таймера */
 {
@@ -55,7 +66,12 @@ int main(void)
     config_text_layer(0, 3, 144, 168, FONT_KEY_GOTHIC_24);
     srand(time(NULL)); /* инициализируем генератор случайных чисел текущем временем */
     window_set_click_config_provider(window, WindowsClickConfigProvider); /* определяем функцию, в которой будут находиться подписки на кнопки */
+#if (LANG == ENG)
+    text_layer_set_text(text_layer, "Magic Pebble \n \n Ask a question that you can answer \n \"yes\" or \"no\" and click button -->");  /* показываем сообщение при запуске программы */
+#endif
+#if (LANG == RUS)
     text_layer_set_text(text_layer, "Magic Pebble \n Задай вопрос, на который можно ответить \"да\" или \"нет\" и нажми \n на кнопку -->");  /* показываем сообщение при запуске программы */
+#endif
     app_event_loop();  /* ждем событий */
     text_layer_destroy(text_layer); /* уничтожаем объекты, освобождаем ресурсы */
     window_destroy(window);  /* уничтожаем объекты, освобождаем ресурсы */
