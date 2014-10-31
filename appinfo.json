@@ -1,24 +1,26 @@
 {
-  "uuid": "4773d224-853f-4a02-ab73-3a7f1c1d6ce5",
-  "shortName": "MagicPebble",
-  "longName": "MagicPebble",
-  "companyName": "vvzvlad",
-  "versionCode": 1,
-  "versionLabel": "1.0.0",
-  "watchapp": {
-    "watchface": false
-  },
-  "appKeys": {
-    "dummy": 0
-  },
-  "resources": {
-    "media": [
-      {
-        "menuIcon": true,
-        "type": "png",
-        "name": "DEFAULT_MENU_ICON",
-        "file": "images/logo.png"
-      }
-    ]
-  }
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "vvzvlad",
+    "longName": "MagicPebble",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "images/logo.png",
+                "menuIcon": true,
+                "name": "DEFAULT_MENU_ICON",
+                "type": "png"
+            }
+        ]
+    },
+    "shortName": "MagicPebble",
+    "uuid": "4773d224-853f-4a02-ab73-3a7f1c1d6ce5",
+    "versionCode": 1,
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": false
+    }
 }
