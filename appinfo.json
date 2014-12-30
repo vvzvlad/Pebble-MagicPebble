@@ -19,7 +19,7 @@
     "shortName": "MagicPebble",
     "uuid": "4773d224-853f-4a02-ab73-3a7f1c1d6ce5",
     "versionCode": 1,
-    "versionLabel": "1.0",
+    "versionLabel": "1.1",
     "watchapp": {
         "watchface": false
     }
